@@ -27,9 +27,15 @@ class _LoginPageState extends State<LoginPage> {
           ),
           child: Column(
             children: [
-              Image.asset(
-                "asset/images/register.png",
-                height: height / 4,
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade300,
+                  shape: BoxShape.circle,
+                ),
+                child: Image.asset(
+                  "asset/images/register.png",
+                  height: height / 4,
+                ),
               ),
               SizedBox(
                 height: height / 30,
@@ -39,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
+                  color: Colors.orange.shade500,
                 ),
               ),
               SizedBox(

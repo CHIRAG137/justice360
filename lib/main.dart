@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:justice360/onboarding.dart';
+import 'package:justice360/women/womendashboard.dart';
 
 void main(){
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:OnboardingScreen(),
+      home:WomenDashboard(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -28,12 +28,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         );
       },
-      finishButtonColor: Colors.blue,
+      finishButtonColor: Colors.orange.shade500,
       skipTextButton: Text(
         'Skip',
         style: TextStyle(
           fontSize: 16,
-          color: Colors.blue,
+          color: Colors.orange.shade500,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -41,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         'Login',
         style: TextStyle(
           fontSize: 16,
-          color: Colors.blue,
+          color: Colors.orange.shade500,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -53,22 +53,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         );
       },
-      controllerColor: Colors.blue,
-      totalPage: 3,
+      controllerColor: Colors.orange.shade500,
+      totalPage: 4,
       headerBackgroundColor: Colors.white,
       pageBackgroundColor: Colors.white,
       background: [
         Image.asset(
-          'asset/images/register.png',
-          height: height / 1.8,
+          'asset/images/onboarding1.png',
+          height: height / 2.1,
         ),
         Image.asset(
-          'asset/images/register.png',
-          height: height / 1.8,
+          'asset/images/onboarding2.png',
+          height: height / 2.1,
         ),
         Image.asset(
-          'asset/images/register.png',
-          height: height / 1.8,
+          'asset/images/onboarding3.png',
+          height: height / 2,
+        ),
+        Image.asset(
+          'asset/images/onboardingLast.png',
+          height: height / 1.7,
         ),
       ],
       speed: 1.8,
@@ -83,10 +87,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: height / 1.64,
               ),
               Text(
-                'On your way...',
+                'Impact Justice',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.orange.shade500,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -95,7 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: height / 38,
               ),
               Text(
-                'to find the perfect looking Onboarding for your app?',
+                'With Stronger Minds for a Safer Society',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black26,
@@ -116,10 +120,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: height / 1.64,
               ),
               Text(
-                'You’ve reached your destination.',
+                'PeacePilot',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.orange.shade500,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -128,7 +132,40 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: height / 38,
               ),
               Text(
-                'Sliding with animation',
+                'For the Foundation of a Thriving Society',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black26,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: height / 1.64,
+              ),
+              Text(
+                'Institutionalize',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.orange.shade500,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(
+                height: height / 38,
+              ),
+              Text(
+                'Building Stronger Institutions for a Fairer World',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black26,
@@ -152,7 +189,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 'Start now!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.orange.shade500,
                   fontSize: 24.0,
                   fontWeight: FontWeight.w600,
                 ),
