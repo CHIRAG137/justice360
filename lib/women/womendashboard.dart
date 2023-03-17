@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:justice360/women/anonymousreporting.dart';
-import 'package:justice360/women/generalreporting.dart';
+import 'package:justice360/women/communitywatch.dart';
+import 'General_Reporting/generalreporting.dart';
 
 class WomenDashboard extends StatefulWidget {
   const WomenDashboard({super.key});
@@ -50,16 +50,6 @@ class _WomenDashboardState extends State<WomenDashboard> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.report),
-              title: Text("Anonymous Reporting"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => AnonymousReporting()),
-                ),
-              ),
-            ),
-            ListTile(
               leading: Icon(Icons.support_agent),
               title: Text("Support Groups"),
             ),
@@ -70,6 +60,12 @@ class _WomenDashboardState extends State<WomenDashboard> {
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),
               title: Text("Community Watch"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => CommunityWatch()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.playlist_add_check_outlined),
