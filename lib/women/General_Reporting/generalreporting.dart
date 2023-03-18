@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:justice360/women/General_Reporting/perpetratorandwitnesses.dart';
-import 'package:justice360/women/communitywatch.dart';
+
+import '../Community_Watch/communitywatch.dart';
 
 class GeneralReporting extends StatefulWidget {
   const GeneralReporting({super.key});

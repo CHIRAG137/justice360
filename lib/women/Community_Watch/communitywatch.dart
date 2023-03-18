@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
-import 'General_Reporting/generalreporting.dart';
+import 'package:justice360/women/Community_Watch/incidentdetails.dart';
+
+import '../General_Reporting/generalreporting.dart';
 
 class CommunityWatch extends StatefulWidget {
   const CommunityWatch({super.key});
@@ -11,6 +14,13 @@ class CommunityWatch extends StatefulWidget {
 }
 
 class _CommunityWatchState extends State<CommunityWatch> {
+  late SingleValueDropDownController _cnt;
+  @override
+  void initState() {
+    _cnt = SingleValueDropDownController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height, width;
@@ -130,62 +140,122 @@ class _CommunityWatchState extends State<CommunityWatch> {
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 40,
+          vertical: 24,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: height / 24,
-              ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: "Your Name"),
+                decoration: InputDecoration(
+                  hintText: "Your Name",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: Color(0xFFFAFAFA),
+                  filled: true,
+                ),
               ),
               SizedBox(
-                height: height / 24,
+                height: height / 32,
               ),
               TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: "Name of Victim"),
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  hintText: "Your Contact Number",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: Color(0xFFFAFAFA),
+                  filled: true,
+                ),
               ),
               SizedBox(
-                height: height / 24,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: "Age of Victim"),
-              ),
-              SizedBox(
-                height: height / 24,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(hintText: "Date of Misconduct"),
-              ),
-              SizedBox(
-                height: height / 24,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(hintText: "Location of Misconduct"),
-              ),
-              SizedBox(
-                height: height / 24,
+                height: height / 32,
               ),
               TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Explain the Misconduct",
-                  isDense: true,
+                  hintText: "Your Current Location",
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: Color(0xFFFAFAFA),
+                  filled: true,
                 ),
-                maxLines: 10,
-                minLines: 6,
+              ),
+              SizedBox(
+                height: height / 32,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  hintText: "Your Address",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: Color(0xFFFAFAFA),
+                  filled: true,
+                ),
               ),
               SizedBox(
                 height: height / 24,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Relationship with Victim",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    DropDownTextField(
+                      controller: _cnt,
+                      clearOption: true,
+                      validator: (value) {
+                        if (value == null) {
+                          return "Required field";
+                        } else {
+                          return null;
+                        }
+                      },
+                      dropDownItemCount: 6,
+                      dropDownList: const [
+                        DropDownValueModel(name: 'Spouse', value: "value1"),
+                        DropDownValueModel(name: 'Partner', value: "value2"),
+                        DropDownValueModel(
+                            name: 'Family Member', value: "value3"),
+                        DropDownValueModel(name: 'Friend', value: "value4"),
+                        DropDownValueModel(name: 'Neighbour', value: "value5"),
+                        DropDownValueModel(name: 'Stranger', value: "value6"),
+                      ],
+                      onChanged: (val) {},
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: height / 14,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -196,8 +266,13 @@ class _CommunityWatchState extends State<CommunityWatch> {
                     vertical: 16,
                   ),
                 ),
-                onPressed: () => _dialogBuilder(context),
-                child: const Text('Submit'),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => IncidentDetails()),
+                  ),
+                ),
+                child: const Text('Next'),
               ),
             ],
           ),
@@ -205,36 +280,4 @@ class _CommunityWatchState extends State<CommunityWatch> {
       ),
     );
   }
-}
-
-Future<void> _dialogBuilder(BuildContext context) {
-  return showDialog<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Are You Sure ?'),
-        content: const Text('Do you really want to register this report ?'),
-        actions: <Widget>[
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: Theme.of(context).textTheme.labelLarge,
-            ),
-            child: const Text('Decline'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: Theme.of(context).textTheme.labelLarge,
-            ),
-            child: const Text('Agree'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
 }
