@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:justice360/women/Community_Engagement/communityengagement.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'General_Reporting/generalreporting.dart';
 
@@ -56,6 +57,12 @@ class _WomenDashboardState extends State<WomenDashboard> {
             ListTile(
               leading: Icon(Icons.groups_rounded),
               title: Text("Community Engagement"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => CommunityEngagement()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),

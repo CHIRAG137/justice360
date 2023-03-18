@@ -4,6 +4,7 @@ import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Watch/incidentdetails.dart';
 
+import '../Community_Engagement/communityengagement.dart';
 import '../General_Reporting/generalreporting.dart';
 
 class CommunityWatch extends StatefulWidget {
@@ -66,6 +67,12 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.groups_rounded),
               title: Text("Community Engagement"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => CommunityEngagement()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),
