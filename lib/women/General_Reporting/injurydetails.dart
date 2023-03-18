@@ -42,11 +42,13 @@ class _InjuryDetailsState extends State<InjuryDetails> {
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 28,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: height / 56,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -151,6 +153,9 @@ class _InjuryDetailsState extends State<InjuryDetails> {
                 ),
                 onPressed: () => _dialogBuilder(context),
                 child: const Text('Submit'),
+              ),
+              SizedBox(
+                height: height / 56,
               ),
             ],
           ),

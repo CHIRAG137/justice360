@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
-import 'package:justice360/women/General_Reporting/perpetratorandwitnesses.dart';
+import 'package:justice360/women/General_Reporting/perpetrator.dart';
 
 import '../Community_Watch/communitywatch.dart';
 
@@ -140,11 +140,13 @@ class _GeneralReportingState extends State<GeneralReporting> {
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 20,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: height / 56,
+              ),
               TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
@@ -200,9 +202,27 @@ class _GeneralReportingState extends State<GeneralReporting> {
                 height: height / 32,
               ),
               TextFormField(
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  hintText: "Your Address",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: Color(0xFFFAFAFA),
+                  filled: true,
+                ),
+              ),
+              SizedBox(
+                height: height / 32,
+              ),
+              TextFormField(
                 keyboardType: TextInputType.datetime,
                 decoration: InputDecoration(
-                  hintText: "Date of Misconduct",
+                  hintText: "Date of Incident",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
@@ -270,7 +290,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
               TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Location of Misconduct",
+                  hintText: "Location of Incident",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
@@ -288,7 +308,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
               TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Description of Misconduct",
+                  hintText: "Description of Incident",
                   isDense: true,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -318,10 +338,13 @@ class _GeneralReportingState extends State<GeneralReporting> {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: ((context) => PerpetratorAndWitness()),
+                    builder: ((context) => PerpetratorDetails()),
                   ),
                 ),
                 child: const Text('Next'),
+              ),
+              SizedBox(
+                height: height / 56,
               ),
             ],
           ),

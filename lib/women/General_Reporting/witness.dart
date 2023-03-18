@@ -4,14 +4,14 @@ import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/women/General_Reporting/injurydetails.dart';
 
-class PerpetratorAndWitness extends StatefulWidget {
-  const PerpetratorAndWitness({super.key});
+class Witness extends StatefulWidget {
+  const Witness({super.key});
 
   @override
-  State<PerpetratorAndWitness> createState() => _PerpetratorAndWitnessState();
+  State<Witness> createState() => _WitnessState();
 }
 
-class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
+class _WitnessState extends State<Witness> {
   late SingleValueDropDownController _cnt;
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
           color: Colors.orange.shade500,
         ),
         title: Text(
-          "Perpetrator and Witnesses",
+          "Witness Details",
           style: TextStyle(
             color: Colors.black,
           ),
@@ -43,22 +43,17 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 20,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Text(
-                "Details of the Perpetrator",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-              ),
               SizedBox(
-                height: height / 40,
+                height: height / 56,
               ),
               TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Name of Perpetrator",
+                  hintText: "Name of Witness",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
@@ -69,28 +64,6 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
                   fillColor: Color(0xFFFAFAFA),
                   filled: true,
                 ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText:
-                      "Physical Description of Perpetrator",
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-                maxLines: 10,
-                minLines: 6,
               ),
               SizedBox(
                 height: height / 32,
@@ -101,7 +74,7 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Relationship with Perpetrator",
+                      "Relationship with Witness",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.grey,
@@ -135,58 +108,9 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
                 height: height / 32,
               ),
               TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Address of the Perpetrator",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  hintText: "Contact Number of Perpetrator",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 24,
-              ),
-              Divider(
-                thickness: 1.5,
-              ),
-              SizedBox(
-                height: height / 24,
-              ),
-              Text(
-                "Details of the Witness",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
-              ),
-              SizedBox(
-                height: height / 40,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Name of Witness",
+                  hintText: "Contact Number of Witness",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
@@ -220,9 +144,9 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
                 height: height / 32,
               ),
               TextFormField(
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Contact Number of Witness",
+                  hintText: "Age of Witness",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
@@ -266,6 +190,9 @@ class _PerpetratorAndWitnessState extends State<PerpetratorAndWitness> {
                     color: Colors.blue.shade600,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: height / 56,
               ),
             ],
           ),

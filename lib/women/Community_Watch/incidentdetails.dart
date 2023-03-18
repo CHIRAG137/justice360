@@ -3,6 +3,7 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Watch/perpetratordetails.dart';
+
 class IncidentDetails extends StatefulWidget {
   const IncidentDetails({super.key});
 
@@ -42,11 +43,13 @@ class _IncidentDetailsState extends State<IncidentDetails> {
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 20,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: height / 56,
+              ),
               TextFormField(
                 keyboardType: TextInputType.datetime,
                 decoration: InputDecoration(
@@ -227,7 +230,7 @@ class _IncidentDetailsState extends State<IncidentDetails> {
                 ),
                 child: const Text('Next'),
               ),
-               SizedBox(
+              SizedBox(
                 height: height / 60,
               ),
               GestureDetector(

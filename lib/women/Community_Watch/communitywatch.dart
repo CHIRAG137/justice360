@@ -140,11 +140,13 @@ class _CommunityWatchState extends State<CommunityWatch> {
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 24,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: height / 56,
+              ),
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
