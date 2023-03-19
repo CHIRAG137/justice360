@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_new
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Engagement/comments.dart';
 import 'package:justice360/women/Community_Engagement/post.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'package:justice360/women/General_Reporting/generalreporting.dart';
+import 'package:justice360/women/virtualbuddy.dart';
 
 class CommunityEngagement extends StatefulWidget {
   const CommunityEngagement({super.key});
@@ -99,6 +102,12 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
             ListTile(
               leading: Icon(Icons.groups_rounded),
               title: Text("Community Engagement"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => CommunityEngagement()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),
@@ -117,6 +126,12 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => VirtualBuddy()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.report_problem_rounded),
@@ -186,6 +201,58 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
               padding: EdgeInsets.all(14),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "09:00",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "23.03.2023",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Colors.teal.shade500,
+                        ),
+                        child: Text(
+                          "Sexual Harassment",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
                   Text(
                     "Stay focused on ypur financial goal. Invest for long term to mitigate risk.",
                   ),
@@ -304,6 +371,58 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
               padding: EdgeInsets.all(14),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "09:00",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "23.03.2023",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Colors.teal.shade500,
+                        ),
+                        child: Text(
+                          "Sexual Harassment",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
                   Text(
                     "Stay focused on ypur financial goal. Invest for long term to mitigate risk.",
                   ),
@@ -377,17 +496,25 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
                           Text("Like"),
                         ],
                       ),
-                      Column(
-                        children: [
-                          Icon(
-                            Icons.comment_rounded,
-                            size: 16,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => Comments()),
                           ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          Text("Comment"),
-                        ],
+                        ),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.comment_rounded,
+                              size: 16,
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text("Comment"),
+                          ],
+                        ),
                       ),
                       Column(
                         children: [
@@ -414,6 +541,58 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
               padding: EdgeInsets.all(14),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "09:00",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "23.03.2023",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Colors.teal.shade500,
+                        ),
+                        child: Text(
+                          "Sexual Harassment",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
                   Text(
                     "Stay focused on ypur financial goal. Invest for long term to mitigate risk.",
                   ),
@@ -487,17 +666,25 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
                           Text("Like"),
                         ],
                       ),
-                      Column(
-                        children: [
-                          Icon(
-                            Icons.comment_rounded,
-                            size: 16,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => Comments()),
                           ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          Text("Comment"),
-                        ],
+                        ),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.comment_rounded,
+                              size: 16,
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text("Comment"),
+                          ],
+                        ),
                       ),
                       Column(
                         children: [
@@ -524,6 +711,58 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
               padding: EdgeInsets.all(14),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "09:00",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "23.03.2023",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Colors.teal.shade500,
+                        ),
+                        child: Text(
+                          "Sexual Harassment",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
                   Text(
                     "Stay focused on ypur financial goal. Invest for long term to mitigate risk.",
                   ),
@@ -597,17 +836,25 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
                           Text("Like"),
                         ],
                       ),
-                      Column(
-                        children: [
-                          Icon(
-                            Icons.comment_rounded,
-                            size: 16,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => Comments()),
                           ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          Text("Comment"),
-                        ],
+                        ),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.comment_rounded,
+                              size: 16,
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text("Comment"),
+                          ],
+                        ),
                       ),
                       Column(
                         children: [
@@ -625,6 +872,179 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              color: Color.fromARGB(255, 246, 243, 243),
+              padding: EdgeInsets.all(14),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "09:00",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            "23.03.2023",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.all(
+                            Radius.circular(6),
+                          ),
+                          color: Colors.teal.shade500,
+                        ),
+                        child: Text(
+                          "Sexual Harassment",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text(
+                    "Stay focused on ypur financial goal. Invest for long term to mitigate risk.",
+                  ),
+                  SizedBox(
+                    height: height / 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.thumb_up_alt_rounded,
+                            size: 16,
+                            color: Colors.teal.shade500,
+                          ),
+                          SizedBox(
+                            width: width / 48,
+                          ),
+                          Text(
+                            "32 likes",
+                            style: TextStyle(
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "39 comments",
+                            style: TextStyle(
+                              color: Colors.black87,
+                            ),
+                          ),
+                          SizedBox(
+                            width: width / 24,
+                          ),
+                          Text(
+                            "32 reposts",
+                            style: TextStyle(
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Divider(
+                    thickness: 1,
+                    color: Colors.black26,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Icon(
+                            Icons.thumb_up_alt_rounded,
+                            size: 16,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text("Like"),
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => Comments()),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.comment_rounded,
+                              size: 16,
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text("Comment"),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Icon(
+                            Icons.repeat_rounded,
+                            size: 16,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text("Repost"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 8,
             ),
           ],
         ),

@@ -54,11 +54,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 child: Image.asset(
                   "asset/images/register.png",
-                  height: height / 4,
+                  height: height / 5,
                 ),
               ),
               SizedBox(
-                height: height / 30,
+                height: 12,
               ),
               Text(
                 "Welcome",
@@ -69,7 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(
-                height: height / 60,
+                height: 8,
               ),
               Text(
                 "Let's get you onboard",
@@ -107,6 +107,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ],
                 onChanged: (val) {},
+              ),
+              SizedBox(
+                height: height / 30,
+              ),
+              TextFormField(
+                decoration: InputDecoration(labelText: "Location"),
               ),
               SizedBox(
                 height: height / 30,
@@ -157,7 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(
-                height: height / 20,
+                height: 24,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

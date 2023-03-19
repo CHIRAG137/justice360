@@ -6,6 +6,7 @@ import 'package:justice360/women/General_Reporting/perpetrator.dart';
 
 import '../Community_Engagement/communityengagement.dart';
 import '../Community_Watch/communitywatch.dart';
+import '../virtualbuddy.dart';
 
 class GeneralReporting extends StatefulWidget {
   const GeneralReporting({super.key});
@@ -53,6 +54,12 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.report),
               title: Text("General Reporting"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => GeneralReporting()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.support_agent),
@@ -85,6 +92,12 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => VirtualBuddy()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.report_problem_rounded),

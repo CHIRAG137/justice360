@@ -6,6 +6,7 @@ import 'package:justice360/women/Community_Watch/incidentdetails.dart';
 
 import '../Community_Engagement/communityengagement.dart';
 import '../General_Reporting/generalreporting.dart';
+import '../virtualbuddy.dart';
 
 class CommunityWatch extends StatefulWidget {
   const CommunityWatch({super.key});
@@ -77,6 +78,12 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),
               title: Text("Community Watch"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => CommunityWatch()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.playlist_add_check_outlined),
@@ -85,6 +92,12 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => VirtualBuddy()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.report_problem_rounded),

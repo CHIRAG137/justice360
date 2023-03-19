@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 
 class Post extends StatefulWidget {
@@ -10,8 +11,19 @@ class Post extends StatefulWidget {
 }
 
 class _PostState extends State<Post> {
+  late SingleValueDropDownController _cnt;
+  @override
+  void initState() {
+    _cnt = SingleValueDropDownController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    double height, width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,12 +60,68 @@ class _PostState extends State<Post> {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24),
-        child: TextFormField(
-          decoration: InputDecoration(
-            hintText: "What do you want to talk about?",
-            border: InputBorder.none,
-          ),
-          maxLines: 36,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 8,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 6),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Relationship with Perpetrator",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  DropDownTextField(
+                    controller: _cnt,
+                    clearOption: true,
+                    validator: (value) {
+                      if (value == null) {
+                        return "Required field";
+                      } else {
+                        return null;
+                      }
+                    },
+                    dropDownItemCount: 10,
+                    dropDownList: const [
+                      DropDownValueModel(
+                          name: 'Sexual Harassment', value: "value1"),
+                      DropDownValueModel(
+                          name: 'Domestic Violence', value: "value2"),
+                      DropDownValueModel(name: 'Rape', value: "value3"),
+                      DropDownValueModel(name: 'Stalking', value: "value4"),
+                      DropDownValueModel(
+                          name: 'Cyberbullying', value: "value5"),
+                      DropDownValueModel(name: 'Acid Attack', value: "value6"),
+                      DropDownValueModel(
+                          name: 'Forced Marriage', value: "value7"),
+                      DropDownValueModel(
+                          name: 'Child Marriage', value: "value8"),
+                      DropDownValueModel(
+                          name: 'Honor Killing', value: "value9"),
+                      DropDownValueModel(name: 'Others', value: "value10"),
+                    ],
+                    onChanged: (val) {},
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: "What do you want to talk about?",
+                border: InputBorder.none,
+              ),
+              maxLines: 30,
+            ),
+          ],
         ),
       ),
     );

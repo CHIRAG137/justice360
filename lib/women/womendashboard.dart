@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Engagement/communityengagement.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
+import 'package:justice360/women/virtualbuddy.dart';
 import 'General_Reporting/generalreporting.dart';
 
 class WomenDashboard extends StatefulWidget {
@@ -81,6 +82,12 @@ class _WomenDashboardState extends State<WomenDashboard> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => VirtualBuddy()),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.report_problem_rounded),
