@@ -3,10 +3,9 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Watch/incidentdetails.dart';
-
 import '../Community_Engagement/communityengagement.dart';
 import '../General_Reporting/generalreporting.dart';
-import '../virtualbuddy.dart';
+import '../Virtual_Buddy/virtualbuddy.dart';
 
 class CommunityWatch extends StatefulWidget {
   const CommunityWatch({super.key});
@@ -145,7 +144,7 @@ class _CommunityWatchState extends State<CommunityWatch> {
                     ),
                   ),
                   Text(
-                    "Aditya Raj",
+                    "Ritik Kumar",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,

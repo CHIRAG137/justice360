@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:justice360/women/General_Reporting/perpetrator.dart';
-
 import '../Community_Engagement/communityengagement.dart';
 import '../Community_Watch/communitywatch.dart';
-import '../virtualbuddy.dart';
+import '../Virtual_Buddy/virtualbuddy.dart';
 
 class GeneralReporting extends StatefulWidget {
   const GeneralReporting({super.key});
@@ -144,7 +143,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
                     ),
                   ),
                   Text(
-                    "Aditya Raj",
+                    "Ritik Kumar",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,

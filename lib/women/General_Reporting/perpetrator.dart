@@ -91,7 +91,7 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
                           return null;
                         }
                       },
-                      dropDownItemCount: 5,
+                      dropDownItemCount: 6,
                       dropDownList: const [
                         DropDownValueModel(name: 'Spouse', value: "value1"),
                         DropDownValueModel(name: 'Partner', value: "value2"),
@@ -99,6 +99,7 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
                             name: 'Family Member', value: "value3"),
                         DropDownValueModel(name: 'Friend', value: "value4"),
                         DropDownValueModel(name: 'Stranger', value: "value5"),
+                        DropDownValueModel(name: 'Others', value: "value6"),
                       ],
                       onChanged: (val) {},
                     ),

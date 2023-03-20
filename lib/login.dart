@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:justice360/login.dart';
 import 'package:justice360/register.dart';
+import 'package:justice360/women/womendashboard.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -92,7 +93,12 @@ class _LoginPageState extends State<LoginPage> {
                 height: height / 16,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => WomenDashboard()),
+                  ),
+                ),
                 child: Text(
                   "Sign In",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:justice360/women/Virtual_Buddy/invitations.dart';
 
 class Connect extends StatefulWidget {
   const Connect({super.key});
@@ -47,7 +48,15 @@ class _ConnectState extends State<Connect> {
                     color: Colors.blue.shade700,
                   ),
                 ),
-                Icon(Icons.navigate_next_rounded),
+                GestureDetector(
+                  onTap: (() => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => Invitations()),
+                        ),
+                      )),
+                  child: Icon(Icons.navigate_next_rounded),
+                ),
               ],
             ),
             Divider(

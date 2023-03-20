@@ -7,7 +7,7 @@ import 'package:justice360/women/Community_Engagement/comments.dart';
 import 'package:justice360/women/Community_Engagement/post.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'package:justice360/women/General_Reporting/generalreporting.dart';
-import 'package:justice360/women/virtualbuddy.dart';
+import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
 
 class CommunityEngagement extends StatefulWidget {
   const CommunityEngagement({super.key});
@@ -178,7 +178,7 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
                     ),
                   ),
                   Text(
-                    "Aditya Raj",
+                    "Ritik Kumar",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,

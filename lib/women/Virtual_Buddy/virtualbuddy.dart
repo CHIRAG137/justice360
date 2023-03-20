@@ -5,7 +5,8 @@ import 'package:justice360/main.dart';
 import 'package:justice360/women/Community_Engagement/communityengagement.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'package:justice360/women/General_Reporting/generalreporting.dart';
-import 'package:justice360/women/connect.dart';
+import 'package:justice360/women/Virtual_Buddy/chat.dart';
+import 'package:justice360/women/Virtual_Buddy/connect.dart';
 
 class VirtualBuddy extends StatefulWidget {
   const VirtualBuddy({super.key});
@@ -165,7 +166,7 @@ class _VirtualBuddyState extends State<VirtualBuddy> {
                     ),
                   ),
                   Text(
-                    "Aditya Raj",
+                    "Ritik Kumar",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
@@ -183,69 +184,77 @@ class _VirtualBuddyState extends State<VirtualBuddy> {
         ),
         child: Column(
           children: [
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        child: Text(
-                          "K",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                        backgroundColor: Colors.purple,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Kiara Advani",
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => Chat()),
+                ),
+              ),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          child: Text(
+                            "K",
                             style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 16),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
                           ),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.send,
-                                size: 12,
-                                color: Colors.red.shade500,
-                              ),
-                              SizedBox(
-                                width: 2,
-                              ),
-                              Text(
-                                "Delivered",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.black54,
+                          backgroundColor: Colors.purple,
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Kiara Advani",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 16),
+                            ),
+                            SizedBox(
+                              height: 2,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.send,
+                                  size: 12,
+                                  color: Colors.red.shade500,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "Yesterday",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black54,
+                                SizedBox(
+                                  width: 2,
+                                ),
+                                Text(
+                                  "Delivered",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    Text(
+                      "Yesterday",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Divider(

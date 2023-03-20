@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Engagement/communityengagement.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
-import 'package:justice360/women/virtualbuddy.dart';
+import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
 import 'General_Reporting/generalreporting.dart';
 
 class WomenDashboard extends StatefulWidget {
@@ -134,7 +134,7 @@ class _WomenDashboardState extends State<WomenDashboard> {
                     ),
                   ),
                   Text(
-                    "Aditya Raj",
+                    "Ritik Kumar",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,

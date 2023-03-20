@@ -3,6 +3,7 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/login.dart';
+import 'package:justice360/women/womendashboard.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -149,7 +150,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: height / 60,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => WomenDashboard()),
+                  ),
+                ),
                 child: Text(
                   "Register",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
