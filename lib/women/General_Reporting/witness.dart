@@ -41,33 +41,17 @@ class _WitnessState extends State<Witness> {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        padding: EdgeInsets.only(
+          left: 24,
+          right: 24,
+          top: 16,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: height / 56,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Name of Witness",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Witness's Name", true, 1, 1),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -105,68 +89,23 @@ class _WitnessState extends State<Witness> {
                 ),
               ),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: "Contact Number of Witness",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Address of the Witness",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Age of Witness",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 14,
-              ),
+              CustomTextFormField(
+                  TextInputType.phone, "Witness's Contact Number", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Witness's Address", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.phone, "Witness's Age", true, 1, 1),
+              SizedBox(height: 56),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.orange.shade500,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40,
+                    horizontal: width / 2.6,
                     vertical: 16,
                   ),
                 ),
@@ -179,7 +118,7 @@ class _WitnessState extends State<Witness> {
                 child: const Text('Next'),
               ),
               SizedBox(
-                height: height / 40,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () => _dialogBuilder(context),
@@ -191,15 +130,34 @@ class _WitnessState extends State<Witness> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: height / 56,
-              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
+    int minLines, int maxLines) {
+  return TextFormField(
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      hintText: hintText,
+      isDense: dense,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          width: 0,
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: Color(0xFFFAFAFA),
+      filled: true,
+    ),
+    minLines: minLines,
+    maxLines: maxLines,
+  );
 }
 
 Future<void> _dialogBuilder(BuildContext context) {

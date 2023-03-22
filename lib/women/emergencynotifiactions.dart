@@ -1,5 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:justice360/components/drawer.dart';
+import 'package:justice360/women/Community_Engagement/communityengagement.dart';
+import 'package:justice360/women/Community_Watch/communitywatch.dart';
+import 'package:justice360/women/General_Reporting/generalreporting.dart';
+import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
 import 'package:location/location.dart' as loc;
 
 class EmergencyNotifications extends StatefulWidget {
@@ -44,7 +51,12 @@ class _EmergencyNotificationsState extends State<EmergencyNotifications> {
 
   @override
   Widget build(BuildContext context) {
+    double height, width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.orange.shade500,
@@ -58,20 +70,214 @@ class _EmergencyNotificationsState extends State<EmergencyNotifications> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Current City: $_currentCity'),
-            SizedBox(height: 16),
-            Text('Current Colony: $_currentColony'),
-            SizedBox(height: 16),
-            Text('Latitude: $_latitude'),
-            SizedBox(height: 16),
-            Text('Longitude: $_longitude'),
-          ],
+      drawer: CustomDrawer(),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(
+          horizontal: 24,
+        ),
+        child: Container(
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: height / 32,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: "Emergency Contact Number",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
+                      ),
+                      fillColor: Color(0xFFFAFAFA),
+                      filled: true,
+                    ),
+                  ),
+                  SizedBox(
+                    height: height / 32,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: "Contact Person Name",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
+                      ),
+                      fillColor: Color(0xFFFAFAFA),
+                      filled: true,
+                    ),
+                  ),
+                  SizedBox(
+                    height: height / 32,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: "Relationship with Contact Person",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
+                      ),
+                      fillColor: Color(0xFFFAFAFA),
+                      filled: true,
+                    ),
+                  ),
+                  SizedBox(
+                    height: height / 12,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: Colors.orange.shade500,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 16,
+                      ),
+                    ),
+                    onPressed: () => _dialogBuilder(context),
+                    child: const Text('Submit'),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: height / 6,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),border: Border.all(color: Colors.orange.shade100,)),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Current City: ',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '$_currentCity',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.orange.shade500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Current Colony: ',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '$_currentColony',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.orange.shade500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Latitude: ',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '$_latitude',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.orange.shade500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Longitude: ',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '$_longitude',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.orange.shade500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+Future<void> _dialogBuilder(BuildContext context) {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Are You Sure ?'),
+        content: const Text(
+            'Do you really want to register this contact number as your emergency contact number ?'),
+        actions: <Widget>[
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Decline'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Agree'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

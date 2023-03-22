@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:justice360/components/drawer.dart';
 import 'package:justice360/women/Community_Engagement/comments.dart';
 import 'package:justice360/women/Community_Engagement/post.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
@@ -79,124 +80,7 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
           }),
         ],
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          children: [
-            SizedBox(
-              height: height / 50,
-            ),
-            ListTile(
-              leading: Icon(Icons.report),
-              title: Text("General Reporting"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => GeneralReporting()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.support_agent),
-              title: Text("Support Groups"),
-            ),
-            ListTile(
-              leading: Icon(Icons.groups_rounded),
-              title: Text("Community Engagement"),
-               onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => CommunityEngagement()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.remove_red_eye_sharp),
-              title: Text("Community Watch"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => CommunityWatch()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.playlist_add_check_outlined),
-              title: Text("Personalized Safety Plan"),
-            ),
-            ListTile(
-              leading: Icon(Icons.girl_rounded),
-              title: Text("Virtual Buddy"),
-               onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => VirtualBuddy()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.report_problem_rounded),
-              title: Text("Personalized Risk Assessment"),
-            ),
-            ListTile(
-              leading: Icon(Icons.map_rounded),
-              title: Text("Smart Mapping"),
-            ),
-            ListTile(
-              leading: Icon(Icons.cases_rounded),
-              title: Text("Virtual Legal Clinic"),
-            ),
-            ListTile(
-              leading: Icon(Icons.emergency_rounded),
-              title: Text("Emergency Notifications"),
-               onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => EmergencyNotifications()),
-                ),
-              ),
-            ),
-            SizedBox(height: height / 32),
-            Align(
-              alignment: Alignment.center,
-              child: Wrap(
-                direction: Axis.vertical,
-                spacing: 10,
-                children: [
-                  Text(
-                    "Developed By",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                    ),
-                  ),
-                  Text(
-                    "Chirag Goel",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    "Utsav Rai",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    "Ritik Kumar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [

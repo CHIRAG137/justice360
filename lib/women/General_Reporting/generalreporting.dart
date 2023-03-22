@@ -2,11 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
+import 'package:justice360/components/drawer.dart';
 import 'package:justice360/women/General_Reporting/perpetrator.dart';
-import 'package:justice360/women/emergencynotifiactions.dart';
-import '../Community_Engagement/communityengagement.dart';
-import '../Community_Watch/communitywatch.dart';
-import '../Virtual_Buddy/virtualbuddy.dart';
 
 class GeneralReporting extends StatefulWidget {
   const GeneralReporting({super.key});
@@ -44,225 +41,29 @@ class _GeneralReportingState extends State<GeneralReporting> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: ListView(
-          children: [
-            SizedBox(
-              height: height / 50,
-            ),
-            ListTile(
-              leading: Icon(Icons.report),
-              title: Text("General Reporting"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => GeneralReporting()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.support_agent),
-              title: Text("Support Groups"),
-            ),
-            ListTile(
-              leading: Icon(Icons.groups_rounded),
-              title: Text("Community Engagement"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => CommunityEngagement()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.remove_red_eye_sharp),
-              title: Text("Community Watch"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => CommunityWatch()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.playlist_add_check_outlined),
-              title: Text("Personalized Safety Plan"),
-            ),
-            ListTile(
-              leading: Icon(Icons.girl_rounded),
-              title: Text("Virtual Buddy"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => VirtualBuddy()),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.report_problem_rounded),
-              title: Text("Personalized Risk Assessment"),
-            ),
-            ListTile(
-              leading: Icon(Icons.map_rounded),
-              title: Text("Smart Mapping"),
-            ),
-            ListTile(
-              leading: Icon(Icons.cases_rounded),
-              title: Text("Virtual Legal Clinic"),
-            ),
-            ListTile(
-              leading: Icon(Icons.emergency_rounded),
-              title: Text("Emergency Notifications"),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: ((context) => EmergencyNotifications()),
-                ),
-              ),
-            ),
-            SizedBox(height: height / 32),
-            Align(
-              alignment: Alignment.center,
-              child: Wrap(
-                direction: Axis.vertical,
-                spacing: 10,
-                children: [
-                  Text(
-                    "Developed By",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                    ),
-                  ),
-                  Text(
-                    "Chirag Goel",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    "Utsav Rai",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    "Ritik Kumar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        padding: EdgeInsets.only(
+          left: 24,
+          right: 24,
+          top: 16,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: height / 56,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Your Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: "Your Age",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: "Contact Number",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Your Address",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
-                  hintText: "Date of Incident",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(TextInputType.text, "Your Name", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.number, "Age", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.phone, "Contact Number", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.text, "Address", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.datetime, "Date of Incident", true, 1, 1),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -310,54 +111,21 @@ class _GeneralReportingState extends State<GeneralReporting> {
                   ],
                 ),
               ),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Location of Incident", true, 1, 3),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Location of Incident",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 24,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Description of Incident",
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-                maxLines: 10,
-                minLines: 6,
-              ),
-              SizedBox(
-                height: height / 14,
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Description of Incident", true, 1, 10),
+              SizedBox(height: 56),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.orange.shade500,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40,
+                    horizontal: width / 2.6,
                     vertical: 16,
                   ),
                 ),
@@ -369,13 +137,32 @@ class _GeneralReportingState extends State<GeneralReporting> {
                 ),
                 child: const Text('Next'),
               ),
-              SizedBox(
-                height: height / 56,
-              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
+    int minLines, int maxLines) {
+  return TextFormField(
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      hintText: hintText,
+      isDense: dense,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          width: 0,
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: Color(0xFFFAFAFA),
+      filled: true,
+    ),
+    minLines: minLines,
+    maxLines: maxLines,
+  );
 }
