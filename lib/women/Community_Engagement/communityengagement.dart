@@ -8,6 +8,7 @@ import 'package:justice360/women/Community_Engagement/post.dart';
 import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'package:justice360/women/General_Reporting/generalreporting.dart';
 import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
+import 'package:justice360/women/emergencynotifiactions.dart';
 
 class CommunityEngagement extends StatefulWidget {
   const CommunityEngagement({super.key});
@@ -148,6 +149,12 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
             ListTile(
               leading: Icon(Icons.emergency_rounded),
               title: Text("Emergency Notifications"),
+               onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => EmergencyNotifications()),
+                ),
+              ),
             ),
             SizedBox(height: height / 32),
             Align(

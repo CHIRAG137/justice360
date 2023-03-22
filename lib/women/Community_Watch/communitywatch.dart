@@ -3,6 +3,7 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/women/Community_Watch/incidentdetails.dart';
+import 'package:justice360/women/emergencynotifiactions.dart';
 import '../Community_Engagement/communityengagement.dart';
 import '../General_Reporting/generalreporting.dart';
 import '../Virtual_Buddy/virtualbuddy.dart';
@@ -77,7 +78,7 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.remove_red_eye_sharp),
               title: Text("Community Watch"),
-               onTap: () => Navigator.push(
+              onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: ((context) => CommunityWatch()),
@@ -91,7 +92,7 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
-               onTap: () => Navigator.push(
+              onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: ((context) => VirtualBuddy()),
@@ -113,6 +114,12 @@ class _CommunityWatchState extends State<CommunityWatch> {
             ListTile(
               leading: Icon(Icons.emergency_rounded),
               title: Text("Emergency Notifications"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => EmergencyNotifications()),
+                ),
+              ),
             ),
             SizedBox(height: height / 24),
             Align(

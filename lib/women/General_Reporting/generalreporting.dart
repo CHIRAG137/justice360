@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:justice360/women/General_Reporting/perpetrator.dart';
+import 'package:justice360/women/emergencynotifiactions.dart';
 import '../Community_Engagement/communityengagement.dart';
 import '../Community_Watch/communitywatch.dart';
 import '../Virtual_Buddy/virtualbuddy.dart';
@@ -53,7 +54,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.report),
               title: Text("General Reporting"),
-               onTap: () => Navigator.push(
+              onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: ((context) => GeneralReporting()),
@@ -67,7 +68,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.groups_rounded),
               title: Text("Community Engagement"),
-               onTap: () => Navigator.push(
+              onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: ((context) => CommunityEngagement()),
@@ -91,7 +92,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.girl_rounded),
               title: Text("Virtual Buddy"),
-               onTap: () => Navigator.push(
+              onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: ((context) => VirtualBuddy()),
@@ -113,6 +114,12 @@ class _GeneralReportingState extends State<GeneralReporting> {
             ListTile(
               leading: Icon(Icons.emergency_rounded),
               title: Text("Emergency Notifications"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => EmergencyNotifications()),
+                ),
+              ),
             ),
             SizedBox(height: height / 32),
             Align(

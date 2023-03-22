@@ -7,6 +7,7 @@ import 'package:justice360/women/Community_Watch/communitywatch.dart';
 import 'package:justice360/women/General_Reporting/generalreporting.dart';
 import 'package:justice360/women/Virtual_Buddy/chat.dart';
 import 'package:justice360/women/Virtual_Buddy/connect.dart';
+import 'package:justice360/women/emergencynotifiactions.dart';
 
 class VirtualBuddy extends StatefulWidget {
   const VirtualBuddy({super.key});
@@ -135,6 +136,12 @@ class _VirtualBuddyState extends State<VirtualBuddy> {
             ListTile(
               leading: Icon(Icons.emergency_rounded),
               title: Text("Emergency Notifications"),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => EmergencyNotifications()),
+                ),
+              ),
             ),
             SizedBox(height: height / 24),
             Align(
