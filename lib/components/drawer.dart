@@ -121,21 +121,21 @@ class CustomDrawer extends StatelessWidget {
                         "Chirag",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                       Text(
                         "Utsav",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                       Text(
                         "Ritik",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                     ],

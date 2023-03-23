@@ -40,8 +40,10 @@ class _InjuryDetailsState extends State<InjuryDetails> {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        padding: EdgeInsets.only(
+          right: 24,
+          left: 24,
+          top: 16,
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -86,76 +88,34 @@ class _InjuryDetailsState extends State<InjuryDetails> {
                 ),
               ),
               SizedBox(
-                height: height / 40,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Name of the Hospital",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Hospital's Name", true, 1, 3),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Doctor's Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Doctor's Name", true, 1, 3),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: "Contact Number of Doctor",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Doctor's Contact Number", true, 1, 3),
               SizedBox(
-                height: height / 14,
+                height: 40,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.orange.shade500,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40,
+                    horizontal: width / 2.7,
                     vertical: 16,
                   ),
                 ),
                 onPressed: () => _dialogBuilder(context),
                 child: const Text('Submit'),
-              ),
-              SizedBox(
-                height: height / 56,
               ),
             ],
           ),
@@ -163,6 +123,28 @@ class _InjuryDetailsState extends State<InjuryDetails> {
       ),
     );
   }
+}
+
+Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
+    int minLines, int maxLines) {
+  return TextFormField(
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      hintText: hintText,
+      isDense: dense,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          width: 0,
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: Color(0xFFFAFAFA),
+      filled: true,
+    ),
+    minLines: minLines,
+    maxLines: maxLines,
+  );
 }
 
 Future<void> _dialogBuilder(BuildContext context) {
