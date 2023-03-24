@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:justice360/authentication.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,13 +12,30 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  Timer? timer;
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    timer = Timer(
+      Duration(seconds: 5),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: ((context) => Authenticate()),
+        ),
+      ),
+    );
     double height, width;
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 22,
@@ -30,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: Colors.orange.shade300,
               ),
               child: Image.asset(
-                "asset/images/splashscreen.png",
+                "asset/images/dashboard.jpg",
                 height: height / 3.5,
               ),
             ),
@@ -43,14 +62,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 Text(
                   "j",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 28,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
                 Text(
                   "us",
                   style: TextStyle(
-                    fontSize: 26,
+                    fontSize: 30,
                     fontWeight: FontWeight.w800,
                     color: Colors.orange.shade500,
                   ),
@@ -58,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 Text(
                   "tice360",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 28,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
