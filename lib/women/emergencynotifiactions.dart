@@ -2,11 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:justice360/components/drawer.dart';
-import 'package:justice360/women/Community_Engagement/communityengagement.dart';
-import 'package:justice360/women/Community_Watch/communitywatch.dart';
-import 'package:justice360/women/General_Reporting/generalreporting.dart';
-import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
+import 'package:justice360/components/womendrawer.dart';
 import 'package:location/location.dart' as loc;
 
 class EmergencyNotifications extends StatefulWidget {
@@ -70,7 +66,7 @@ class _EmergencyNotificationsState extends State<EmergencyNotifications> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      drawer: CustomDrawer(),
+      drawer: WomenCustomDrawer(),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
           horizontal: 24,

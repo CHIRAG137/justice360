@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:justice360/login.dart';
+import 'package:justice360/police/policedashboard.dart';
 import 'package:justice360/register.dart';
 import 'package:justice360/women/womendashboard.dart';
 
@@ -96,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: ((context) => WomenDashboard()),
+                    builder: ((context) => PoliceDashboard()),
                   ),
                 ),
                 child: Text(

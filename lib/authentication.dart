@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/login.dart';
 import 'package:justice360/onboarding.dart';
-import 'package:justice360/women/womendashboard.dart';
+import 'package:justice360/police/policedashboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Authenticate extends StatefulWidget {
@@ -34,7 +34,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     if (auth.currentUser != null) {
-      return WomenDashboard();
+      return PoliceDashboard();
     } else {
       if (firstvisit == true) {
         return OnboardingScreen();

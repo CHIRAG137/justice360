@@ -7,8 +7,8 @@ import 'package:justice360/women/General_Reporting/generalreporting.dart';
 import 'package:justice360/women/Virtual_Buddy/virtualbuddy.dart';
 import 'package:justice360/women/emergencynotifiactions.dart';
 
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+class WomenCustomDrawer extends StatelessWidget {
+  const WomenCustomDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,10 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.support_agent),
-            title: Text("Support Groups"),
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.support_agent),
+          //   title: Text("Support Groups"),
+          // ),
           ListTile(
             leading: Icon(Icons.groups_rounded),
             title: Text("Community Engagement"),
@@ -57,10 +57,10 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.playlist_add_check_outlined),
-            title: Text("Personalized Safety Plan"),
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.playlist_add_check_outlined),
+          //   title: Text("Personalized Safety Plan"),
+          // ),
           ListTile(
             leading: Icon(Icons.girl_rounded),
             title: Text("Virtual Buddy"),
@@ -71,18 +71,18 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.report_problem_rounded),
-            title: Text("Personalized Risk Assessment"),
-          ),
-          ListTile(
-            leading: Icon(Icons.map_rounded),
-            title: Text("Smart Mapping"),
-          ),
-          ListTile(
-            leading: Icon(Icons.cases_rounded),
-            title: Text("Virtual Legal Clinic"),
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.report_problem_rounded),
+          //   title: Text("Personalized Risk Assessment"),
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.map_rounded),
+          //   title: Text("Smart Mapping"),
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.cases_rounded),
+          //   title: Text("Virtual Legal Clinic"),
+          // ),
           ListTile(
             leading: Icon(Icons.emergency_rounded),
             title: Text("Emergency Notifications"),
@@ -90,57 +90,6 @@ class CustomDrawer extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: ((context) => EmergencyNotifications()),
-              ),
-            ),
-          ),
-          SizedBox(height: 24),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.orange.shade200,),
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    "Developed By",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Wrap(
-                    direction: Axis.horizontal,
-                    spacing: 24,
-                    children: [
-                      Text(
-                        "Chirag",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        "Utsav",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        "Ritik",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
               ),
             ),
           ),

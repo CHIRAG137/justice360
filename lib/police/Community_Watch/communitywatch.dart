@@ -2,8 +2,8 @@
 
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:justice360/components/womendrawer.dart';
-import 'package:justice360/women/Community_Watch/incidentdetails.dart';
+import 'package:justice360/components/policedrawer.dart';
+import 'package:justice360/police/Community_Watch/incidentdetails.dart';
 
 class CommunityWatch extends StatefulWidget {
   const CommunityWatch({super.key});
@@ -41,7 +41,7 @@ class _CommunityWatchState extends State<CommunityWatch> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      drawer: WomenCustomDrawer(),
+      drawer: PoliceCustomDrawer(),
       body: Container(
         padding: EdgeInsets.only(
           left: 24,
@@ -62,43 +62,8 @@ class _CommunityWatchState extends State<CommunityWatch> {
               CustomTextFormField(
                   TextInputType.text, "Your Address", true, 1, 3),
               SizedBox(height: 24),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Relationship with Victim",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    DropDownTextField(
-                      controller: _cnt,
-                      clearOption: true,
-                      validator: (value) {
-                        if (value == null) {
-                          return "Required field";
-                        } else {
-                          return null;
-                        }
-                      },
-                      dropDownItemCount: 6,
-                      dropDownList: const [
-                        DropDownValueModel(name: 'Spouse', value: "value1"),
-                        DropDownValueModel(name: 'Partner', value: "value2"),
-                        DropDownValueModel(
-                            name: 'Family Member', value: "value3"),
-                        DropDownValueModel(name: 'Friend', value: "value4"),
-                        DropDownValueModel(name: 'Neighbour', value: "value5"),
-                        DropDownValueModel(name: 'Stranger', value: "value6"),
-                      ],
-                      onChanged: (val) {},
-                    ),
-                  ],
-                ),
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Relationship with Victim", true, 1, 1),
               SizedBox(
                 height: 56,
               ),
@@ -129,22 +94,33 @@ class _CommunityWatchState extends State<CommunityWatch> {
 
 Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
     int minLines, int maxLines) {
-  return TextFormField(
-    keyboardType: inputType,
-    decoration: InputDecoration(
-      hintText: hintText,
-      isDense: dense,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
-          width: 0,
-          style: BorderStyle.none,
-        ),
+  return Container(
+      child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        hintText,
+        style: TextStyle(
+            fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black38),
       ),
-      fillColor: Color(0xFFFAFAFA),
-      filled: true,
-    ),
-    minLines: minLines,
-    maxLines: maxLines,
-  );
+      SizedBox(
+        height: 8,
+      ),
+      TextFormField(
+        keyboardType: inputType,
+        decoration: InputDecoration(
+          isDense: dense,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(
+              color: Colors.orange.shade500,
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
+        minLines: minLines,
+        maxLines: maxLines,
+      ),
+    ],
+  ));
 }

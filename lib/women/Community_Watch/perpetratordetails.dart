@@ -40,108 +40,75 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        padding: EdgeInsets.only(
+          top: 16,
+          right: 24,
+          left: 24,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: height / 56,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: "Height",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
+              CustomTextFormField(
+                  TextInputType.text, "Perpetrator' Name", true, 1, 1),
+              SizedBox(height: 24),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Relationship with Perpetrator",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
                     ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
+                    DropDownTextField(
+                      controller: _cnt,
+                      clearOption: true,
+                      validator: (value) {
+                        if (value == null) {
+                          return "Required field";
+                        } else {
+                          return null;
+                        }
+                      },
+                      dropDownItemCount: 6,
+                      dropDownList: const [
+                        DropDownValueModel(name: 'Spouse', value: "value1"),
+                        DropDownValueModel(name: 'Partner', value: "value2"),
+                        DropDownValueModel(
+                            name: 'Family Member', value: "value3"),
+                        DropDownValueModel(name: 'Friend', value: "value4"),
+                        DropDownValueModel(name: 'Stranger', value: "value5"),
+                        DropDownValueModel(name: 'Others', value: "value6"),
+                      ],
+                      onChanged: (val) {},
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: "Weight",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Complexion",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Description of the Clothing",
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-                maxLines: 10,
-                minLines: 6,
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Estimated Age",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(TextInputType.phone,
+                  "Perpetrator's Contact Number", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Perpetrator's Address", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.number, "Height", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.number, "Weight", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.text, "Complexion", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Clothing Description", true, 1, 4),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.number, "Estimated Age", true, 1, 1),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -176,62 +143,15 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
                 ),
               ),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Hair Color",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Hair Length",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Hair Style",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(TextInputType.text, "Hair Color", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.number, "Hair Length", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(TextInputType.text, "Hair Style", true, 1, 1),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -268,26 +188,11 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
                 ),
               ),
               SizedBox(
-                height: height / 32,
+                height: 24,
               ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Language Spoken by Perpetrator",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(TextInputType.text,
+                  "Language Spoken by Perpetrator", true, 1, 1),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -323,22 +228,19 @@ class _PerpetratorDetailsState extends State<PerpetratorDetails> {
                 ),
               ),
               SizedBox(
-                height: height / 20,
+                height: height / 14,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.orange.shade500,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40,
+                    horizontal: width / 2.7,
                     vertical: 16,
                   ),
                 ),
                 onPressed: () => _dialogBuilder(context),
                 child: const Text('Submit'),
-              ),
-              SizedBox(
-                height: height / 56,
               ),
             ],
           ),
@@ -377,5 +279,27 @@ Future<void> _dialogBuilder(BuildContext context) {
         ],
       );
     },
+  );
+}
+
+Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
+    int minLines, int maxLines) {
+  return TextFormField(
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      hintText: hintText,
+      isDense: dense,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          width: 0,
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: Color(0xFFFAFAFA),
+      filled: true,
+    ),
+    minLines: minLines,
+    maxLines: maxLines,
   );
 }

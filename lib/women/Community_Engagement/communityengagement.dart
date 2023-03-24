@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:justice360/components/drawer.dart';
+import 'package:justice360/components/womendrawer.dart';
 import 'package:justice360/women/Community_Engagement/comments.dart';
 import 'package:justice360/women/Community_Engagement/post.dart';
-
-import 'communityengagement.dart';
 
 class CommunityEngagement extends StatefulWidget {
   const CommunityEngagement({super.key});
@@ -21,6 +19,7 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 246, 243, 243),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.orange.shade500,
@@ -76,15 +75,27 @@ class _CommunityEngagementState extends State<CommunityEngagement> {
           }),
         ],
       ),
-      drawer: CustomDrawer(),
+      drawer: WomenCustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Blog(TimeOfDay(hour: 23, minute: 0), DateTime(2022, 1, 20),
-                "Sexual Harassment", "Stay focused Stay safe", 12, 23, 34),
+            Blog(context, DateTime.now(), "Sexual Harassment",
+                "Stay focused Stay safe", 12, 23, 34),
             SizedBox(
               height: 8,
             ),
+            Blog(context, DateTime.now(), "Sexual Harassment",
+                "Stay focused Stay safe", 12, 23, 34),
+            SizedBox(
+              height: 8,
+            ),
+            Blog(context, DateTime.now(), "Sexual Harassment",
+                "Stay focused Stay safe", 12, 23, 34),
+            SizedBox(
+              height: 8,
+            ),
+            Blog(context, DateTime.now(), "Sexual Harassment",
+                "Stay focused Stay safe", 12, 23, 34),
             SizedBox(
               height: 8,
             ),
@@ -104,175 +115,174 @@ class CustomBlog extends StatelessWidget {
   }
 }
 
-Blog(TimeOfDay time, DateTime date, String blog_type, String blog,
+Blog(BuildContext context, DateTime date, String blog_type, String blog,
     int like_count, int comment_count, int repost_count) {
-  Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 246, 243, 243),
-      padding: EdgeInsets.all(14),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    time.toString(),
-                    style: TextStyle(
-                      color: Colors.black45,
-                    ),
+  return Container(
+    color: Colors.white,
+    padding: EdgeInsets.all(14),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Text(
+                  "${date.day.toString()} - ${date.month.toString()} - ${date.year.toString()}",
+                  style: TextStyle(
+                    color: Colors.black45,
                   ),
-                  SizedBox(
-                    width: 6,
+                ),
+                SizedBox(
+                  width: 6,
+                ),
+                Text(
+                  "|",
+                  style: TextStyle(
+                    color: Colors.black45,
                   ),
-                  Text(
-                    "|",
-                    style: TextStyle(
-                      color: Colors.black45,
-                    ),
+                ),
+                SizedBox(
+                  width: 6,
+                ),
+                Text(
+                  "${date.hour.toString()} : ${date.minute.toString()} : ${date.second.toString()}",
+                  style: TextStyle(
+                    color: Colors.black45,
                   ),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Text(
-                    date.toString(),
-                    style: TextStyle(
-                      color: Colors.black45,
-                    ),
-                  ),
-                ],
+                ),
+              ],
+            ),
+            Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: new BorderRadius.all(
+                  Radius.circular(6),
+                ),
+                color: Colors.teal.shade500,
               ),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  borderRadius: new BorderRadius.all(
-                    Radius.circular(6),
-                  ),
+              child: Text(
+                blog_type,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Text(
+          blog,
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.thumb_up_alt_rounded,
+                  size: 16,
                   color: Colors.teal.shade500,
                 ),
-                child: Text(
-                  blog_type,
+                SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  like_count.toString() + " likes",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+                    color: Colors.black87,
                   ),
                 ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  comment_count.toString() + " comments",
+                  style: TextStyle(
+                    color: Colors.black87,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  repost_count.toString() + " reposts",
+                  style: TextStyle(
+                    color: Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Divider(
+          thickness: 1,
+          color: Colors.black26,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [
+                Icon(
+                  Icons.thumb_up_alt_rounded,
+                  size: 16,
+                ),
+                SizedBox(
+                  height: 4,
+                ),
+                Text("Like"),
+              ],
+            ),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: ((context) => Comments()),
+                ),
               ),
-            ],
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Text(
-            blog,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+              child: Column(
                 children: [
                   Icon(
-                    Icons.thumb_up_alt_rounded,
-                    size: 16,
-                    color: Colors.teal.shade500,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    like_count.toString() + " likes",
-                    style: TextStyle(
-                      color: Colors.black87,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    comment_count.toString() + " comments",
-                    style: TextStyle(
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    repost_count.toString() + " reposts",
-                    style: TextStyle(
-                      color: Colors.black87,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Divider(
-            thickness: 1,
-            color: Colors.black26,
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  Icon(
-                    Icons.thumb_up_alt_rounded,
+                    Icons.comment_rounded,
                     size: 16,
                   ),
                   SizedBox(
                     height: 4,
                   ),
-                  Text("Like"),
+                  Text("Comment"),
                 ],
               ),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => Comments()),
-                  ),
+            ),
+            Column(
+              children: [
+                Icon(
+                  Icons.repeat_rounded,
+                  size: 16,
                 ),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.comment_rounded,
-                      size: 16,
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text("Comment"),
-                  ],
+                SizedBox(
+                  height: 4,
                 ),
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.repeat_rounded,
-                    size: 16,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text("Repost"),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+                Text("Repost"),
+              ],
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }

@@ -28,7 +28,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         );
       },
-      finishButtonColor: Colors.orange.shade500,
+      finishButtonStyle: FinishButtonStyle(
+        backgroundColor: Colors.orange.shade500,
+      ),
       skipTextButton: Text(
         'Skip',
         style: TextStyle(

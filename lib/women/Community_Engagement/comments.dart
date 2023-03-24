@@ -34,284 +34,19 @@ class _CommentsState extends State<Comments> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.only(
-                right: width / 6,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(6),
-                        bottomRight: Radius.circular(6),
-                        bottomLeft: Radius.circular(6),
-                      ),
-                      color: Color.fromARGB(255, 246, 243, 243),
-                    ),
-                    padding: EdgeInsets.all(16),
-                    child: Text(
-                      "Yeah, It was really awesome to hear such a great news",
-                    ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Like",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "|",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "Reply",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "3 Replies",
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            CustomNewComment("I am Chirag", 5),
             SizedBox(
               height: 20,
             ),
-            Container(
-              margin: EdgeInsets.only(
-                left: width / 6,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(6),
-                        bottomRight: Radius.circular(6),
-                        bottomLeft: Radius.circular(6),
-                      ),
-                      color: Color.fromARGB(255, 246, 243, 243),
-                    ),
-                    padding: EdgeInsets.all(16),
-                    child: Text(
-                      "Yeah, It was really awesome to hear such a great news",
-                    ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Like",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "|",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "Reply",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "3 Replies",
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            CustomReply("I am Utsav", 5),
             SizedBox(
               height: 20,
             ),
-            Container(
-              margin: EdgeInsets.only(
-                left: width / 6,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(6),
-                        bottomRight: Radius.circular(6),
-                        bottomLeft: Radius.circular(6),
-                      ),
-                      color: Color.fromARGB(255, 246, 243, 243),
-                    ),
-                    padding: EdgeInsets.all(16),
-                    child: Text(
-                      "Yeah, It was really awesome to hear such a great news",
-                    ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Like",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "|",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "Reply",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "3 Replies",
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            CustomReply("I am Utsav", 5),
             SizedBox(
               height: 20,
             ),
-            Container(
-              margin: EdgeInsets.only(
-                right: width / 6,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(6),
-                        bottomRight: Radius.circular(6),
-                        bottomLeft: Radius.circular(6),
-                      ),
-                      color: Color.fromARGB(255, 246, 243, 243),
-                    ),
-                    padding: EdgeInsets.all(16),
-                    child: Text(
-                      "Yeah, It was really awesome to hear such a great news",
-                    ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Like",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "|",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        "Reply",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "3 Replies",
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            
+            CustomNewComment("I am Chirag Goel", 3),
           ],
         ),
       ),
@@ -329,4 +64,142 @@ class _CommentsState extends State<Comments> {
       ),
     );
   }
+}
+
+Widget CustomNewComment(String comment, int reply_count) {
+  return Container(
+    margin: EdgeInsets.only(
+      right: 60,
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(6),
+              bottomRight: Radius.circular(6),
+              bottomLeft: Radius.circular(6),
+            ),
+            color: Color.fromARGB(255, 246, 243, 243),
+          ),
+          padding: EdgeInsets.all(16),
+          child: Text(
+            comment,
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Row(
+          children: [
+            Text(
+              "Like",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              "|",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              "Reply",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              reply_count.toString() + " Replies",
+              style: TextStyle(
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Widget CustomReply(String reply, int reply_count) {
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(6),
+              bottomRight: Radius.circular(6),
+              bottomLeft: Radius.circular(6),
+            ),
+            color: Color.fromARGB(255, 246, 243, 243),
+          ),
+          padding: EdgeInsets.all(16),
+          child: Text(
+            reply,
+          ),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              "Like",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              "|",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              "Reply",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              reply_count.toString() + " Replies",
+              style: TextStyle(
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }

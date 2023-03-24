@@ -3,7 +3,7 @@
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:justice360/login.dart';
-import 'package:justice360/women/womendashboard.dart';
+import 'package:justice360/police/policedashboard.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -153,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: ((context) => WomenDashboard()),
+                    builder: ((context) => PoliceDashboard()),
                   ),
                 ),
                 child: Text(

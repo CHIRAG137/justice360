@@ -41,90 +41,26 @@ class _IncidentDetailsState extends State<IncidentDetails> {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        padding: EdgeInsets.only(
+          right: 24,
+          left: 24,
+          top: 16,
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: height / 56,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
-                  hintText: "Date of the Incident",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
-                  hintText: "Time of the Incident",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Location of the Incident",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  hintText: "Description of the Incident",
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
-                  ),
-                  fillColor: Color(0xFFFAFAFA),
-                  filled: true,
-                ),
-                maxLines: 10,
-                minLines: 6,
-              ),
-              SizedBox(
-                height: height / 32,
-              ),
+              CustomTextFormField(
+                  TextInputType.datetime, "Date of Incident", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.datetime, "Time of Incident", true, 1, 1),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Location of Incident", true, 1, 3),
+              SizedBox(height: 24),
+              CustomTextFormField(
+                  TextInputType.text, "Description of Incident", true, 1, 3),
+              SizedBox(height: 24),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6),
                 child: Column(
@@ -211,14 +147,14 @@ class _IncidentDetailsState extends State<IncidentDetails> {
                 ),
               ),
               SizedBox(
-                height: height / 20,
+                height: 56,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   backgroundColor: Colors.orange.shade500,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40,
+                    horizontal: width / 2.5,
                     vertical: 16,
                   ),
                 ),
@@ -231,7 +167,7 @@ class _IncidentDetailsState extends State<IncidentDetails> {
                 child: const Text('Next'),
               ),
               SizedBox(
-                height: height / 60,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () => _dialogBuilder(context),
@@ -280,5 +216,27 @@ Future<void> _dialogBuilder(BuildContext context) {
         ],
       );
     },
+  );
+}
+
+Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
+    int minLines, int maxLines) {
+  return TextFormField(
+    keyboardType: inputType,
+    decoration: InputDecoration(
+      hintText: hintText,
+      isDense: dense,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          width: 0,
+          style: BorderStyle.none,
+        ),
+      ),
+      fillColor: Color(0xFFFAFAFA),
+      filled: true,
+    ),
+    minLines: minLines,
+    maxLines: maxLines,
   );
 }

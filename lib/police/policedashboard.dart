@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:justice360/components/womendrawer.dart';
+import 'package:justice360/components/policedrawer.dart';
 
-class WomenDashboard extends StatefulWidget {
-  const WomenDashboard({super.key});
+class PoliceDashboard extends StatefulWidget {
+  const PoliceDashboard({super.key});
 
   @override
-  State<WomenDashboard> createState() => _WomenDashboardState();
+  State<PoliceDashboard> createState() => _PoliceDashboardState();
 }
 
-class _WomenDashboardState extends State<WomenDashboard> {
+class _PoliceDashboardState extends State<PoliceDashboard> {
   @override
   Widget build(BuildContext context) {
     double height, width;
@@ -24,7 +24,7 @@ class _WomenDashboardState extends State<WomenDashboard> {
           color: Colors.orange.shade500,
         ),
         title: Text(
-          "Women Dashboard",
+          "Police Dashboard",
           style: TextStyle(
             color: Colors.black,
           ),
@@ -32,7 +32,7 @@ class _WomenDashboardState extends State<WomenDashboard> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-     drawer: WomenCustomDrawer(),
+     drawer: PoliceCustomDrawer(),
       body: SingleChildScrollView(child:Column(children: [Image.asset("asset/images/dashboard.jpg"),],),),
     );
   }

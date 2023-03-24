@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
-import 'package:justice360/components/womendrawer.dart';
-import 'package:justice360/women/General_Reporting/perpetrator.dart';
+import 'package:justice360/components/policedrawer.dart';
+import 'package:justice360/police/General_Reporting/perpetrator.dart';
 
 class GeneralReporting extends StatefulWidget {
   const GeneralReporting({super.key});
@@ -41,7 +41,7 @@ class _GeneralReportingState extends State<GeneralReporting> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      drawer: WomenCustomDrawer(),
+      drawer: PoliceCustomDrawer(),
       body: Container(
         color: Colors.white,
         padding: EdgeInsets.only(
@@ -64,53 +64,8 @@ class _GeneralReportingState extends State<GeneralReporting> {
               CustomTextFormField(
                   TextInputType.datetime, "Date of Incident", true, 1, 1),
               SizedBox(height: 24),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Type of Crime",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    DropDownTextField(
-                      controller: _cnt,
-                      clearOption: true,
-                      validator: (value) {
-                        if (value == null) {
-                          return "Required field";
-                        } else {
-                          return null;
-                        }
-                      },
-                      dropDownItemCount: 5,
-                      dropDownList: const [
-                        DropDownValueModel(
-                            name: 'Sexual Harassment', value: "value1"),
-                        DropDownValueModel(
-                            name: 'Domestic Violence', value: "value2"),
-                        DropDownValueModel(name: 'Rape', value: "value3"),
-                        DropDownValueModel(name: 'Stalking', value: "value4"),
-                        DropDownValueModel(
-                            name: 'Cyberbullying', value: "value5"),
-                        DropDownValueModel(
-                            name: 'Acid Attack', value: "value6"),
-                        DropDownValueModel(
-                            name: 'Forced Marriage', value: "value7"),
-                        DropDownValueModel(
-                            name: 'Child Marriage', value: "value8"),
-                        DropDownValueModel(
-                            name: 'Honor Killing', value: "value9"),
-                        DropDownValueModel(name: 'Others', value: "value10"),
-                      ],
-                      onChanged: (val) {},
-                    ),
-                  ],
-                ),
-              ),
+              CustomTextFormField(
+                  TextInputType.text, "Type of Crime", true, 1, 1),
               SizedBox(height: 24),
               CustomTextFormField(
                   TextInputType.text, "Location of Incident", true, 1, 3),
@@ -147,22 +102,33 @@ class _GeneralReportingState extends State<GeneralReporting> {
 
 Widget CustomTextFormField(TextInputType inputType, String hintText, bool dense,
     int minLines, int maxLines) {
-  return TextFormField(
-    keyboardType: inputType,
-    decoration: InputDecoration(
-      hintText: hintText,
-      isDense: dense,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
-          width: 0,
-          style: BorderStyle.none,
-        ),
+  return Container(
+      child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        hintText,
+        style: TextStyle(
+            fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black38),
       ),
-      fillColor: Color(0xFFFAFAFA),
-      filled: true,
-    ),
-    minLines: minLines,
-    maxLines: maxLines,
-  );
+      SizedBox(
+        height: 8,
+      ),
+      TextFormField(
+        keyboardType: inputType,
+        decoration: InputDecoration(
+          isDense: dense,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(
+              color: Colors.orange.shade500,
+              style: BorderStyle.solid,
+            ),
+          ),
+        ),
+        minLines: minLines,
+        maxLines: maxLines,
+      ),
+    ],
+  ));
 }
